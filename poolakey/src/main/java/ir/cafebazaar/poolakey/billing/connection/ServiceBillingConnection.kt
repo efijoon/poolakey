@@ -44,6 +44,8 @@ import ir.cafebazaar.poolakey.takeIf
 import ir.cafebazaar.poolakey.thread.PoolakeyThread
 import java.lang.ref.WeakReference
 
+private const val BILLING_SERVICE_ACTION = "ir.cafebazaar.pardakht.InAppBillingService.BIND"
+
 internal class ServiceBillingConnection(
     private val context: Context,
     mainThread: PoolakeyThread<() -> Unit>,
@@ -280,10 +282,5 @@ internal class ServiceBillingConnection(
 
     private fun disconnect() {
         billingService = null
-    }
-
-    companion object {
-
-        private const val BILLING_SERVICE_ACTION = "ir.cafebazaar.pardakht.InAppBillingService.BIND"
     }
 }
